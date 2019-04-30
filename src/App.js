@@ -20,7 +20,7 @@ function App() {
 	      <main>
           <Route exact path="/" component={Landing} />
           <Route path="/library" component={Library} />
-          <Route path="/Album" component={Album} /> 
+          <Route path="/album" component={Album} /> 
         </main>
     </div>
   );
