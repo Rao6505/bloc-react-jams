@@ -4,7 +4,6 @@ import albumData from './../data/albums';
 class Album extends Component {
 	constructor(props) {
 		super(props);
-
 		const album = albumData.find(album => {
 			return album.slug === this.props.match.params.slug
 		});
@@ -38,12 +37,14 @@ class Album extends Component {
 	handleSongClick(song) {
 		const isSameSong = this.state.currentSong === song;
 		if (this.state.isPlaying && isSameSong) {
-			this.pause();
+		  this.pause();
 		} else {
-			if (!isSameSong) { this.setSong(song); }
-			this.play();
+		  if (!isSameSong) {
+			this.setSong(song);
+		  }
+		  this.play();
 		}
-	}
+	  }
 
 
 
@@ -64,28 +65,31 @@ class Album extends Component {
 						<col id="song-title-column" />
 						<col id="song-duration-column" />
 					</colgroup>
-					<tbody>
-						{this.state.album.songs.map((song, index) =>
+					<tbody className="list-group">
+						<tr>
+							<th>Track #</th>
+							<th>Title</th>
+							<th>Duration</th>
+						</tr>
+						{this.state.album.songs.map((song, index) => (
 							<tr
 								className="song"
 								key={index}
 								onClick={() => this.handleSongClick(song)}
 								onMouseEnter={() => this.setState({ isHovered: index + 1 })}
 								onMouseLeave={() => this.setState({ isHovered: false })}>
-								<td>
-									<button id="song-action-buttons" >
+								<td className="song-actions">
+									<button id="song-action-buttons" className="btn btn-light">
 										{this.state.currentSong.title === song.title ?
-											(<span className={this.state.isPlaying ? "ion-pause" : "ion-play"} />) :
-											this.state.isHovered === index + 1 ? (<span className="ion-play" />) :
-												(<span className="song-number">{index + 1}</span>)}
+										(<span className={this.state.isPlaying ? "ion-pause" : "ion-play"} />) :
+										this.state.isHovered === index + 1 ? (<span className="ion-play" />) :
+										(<span className="song-number">{index + 1}</span>)}
 									</button>
 								</td>
-								<td> {song.number} {index + 1} </td>
-								<td> {song.title} </td>
-								<td> {song.duration} </td>
+								<td className="song-title">{song.title}</td>
+								<td className="song-duration">{song.duration} </td>
 							</tr>
-						)
-						}
+						))}
 					</tbody>
 				</table>
 			</section>
@@ -94,5 +98,3 @@ class Album extends Component {
 }
 
 export default Album;
-
-
