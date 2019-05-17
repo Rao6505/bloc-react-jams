@@ -26,13 +26,13 @@ class PlayerBar extends Component {
 
 				<section id="buttons">
 					<div className="btn-group" role="group" aria-label="Basic example">
-						<button id="previous" className="btn btn-secondary btn-lg" type="button" onClick={this.props.handlePrevClick}>
+						<button id="previous" type="button" onClick={this.props.handlePrevClick}>
 							<span className="ion-skip-backward" />
 						</button>
-						<button id="play-pause" className="btn btn-secondary btn-lg" type="button" onClick={this.props.handleSongClick}>
+						<button id="play-pause" type="button" onClick={this.props.handleSongClick}>
 							<span className={this.props.isPlaying ? 'ion-pause' : 'ion-play'} />
 						</button>
-						<button id="next" className="btn btn-secondary btn-lg" type="button" onClick={this.props.handleNextClick}>
+						<button id="next" type="button" onClick={this.props.handleNextClick}>
 							<span className="ion-skip-forward" />
 						</button>
 					</div>

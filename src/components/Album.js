@@ -16,7 +16,7 @@ class Album extends Component {
 			duration: album.songs[0].duration,
 			isPlaying: false,
 			volume: 0.5,
-			isHovered: false,
+			isHovered: false
 		};
 
 		this.audioElement = document.createElement('audio');
@@ -155,7 +155,7 @@ class Album extends Component {
 								onMouseEnter={() => this.setState({ isHovered: index + 1 })}
 								onMouseLeave={() => this.setState({ isHovered: false })}>
 								<td className="song-actions">
-									<button id="song-action-buttons" className="btn btn-light">
+									<button id="song-action-buttons" >
 										{this.state.currentSong.title === song.title ?
 											(<span className={this.state.isPlaying ? "ion-pause" : "ion-play"} />) :
 											this.state.isHovered === index + 1 ? (<span className="ion-play" />) :
@@ -163,7 +163,7 @@ class Album extends Component {
 									</button>
 								</td>
 								<td className="song-title">{song.title}</td>
-								<td className="song-duration">{song.duration} </td>
+								<td className="song-duration">{this.formatTime(song.duration)} </td>
 							</tr>
 						))}
 					</tbody>
