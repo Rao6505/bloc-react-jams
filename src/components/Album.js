@@ -172,7 +172,7 @@ class Album extends Component {
                 onMouseEnter={() => this.setState({ isHovered: index + 1 })}
                 onMouseLeave={() => this.setState({ isHovered: false })}>
                 <td className="song-actions">
-                  <button id="song-action-buttons" className="btn btn-light">
+                  <button id="song-action-buttons" className="btn btn-outline-success">
                     {this.state.currentSong.title === song.title ?
 										(<span className={this.state.isPlaying ? "ion-pause" : "ion-play"} />) :
 										this.state.isHovered === index + 1 ? (<span className="ion-play" />) :

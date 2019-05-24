@@ -22,7 +22,7 @@ const Landing = () => (
               rel="noopener noreferrer">
               {'Boost creativity '}
             </a>
-            Listening to music you enjoy can help you Remember and Focus
+            while listening to music you enjoy can help you Remember and Focus
           </p>
         </div>
         <div className="point2">

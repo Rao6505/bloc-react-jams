@@ -14,19 +14,19 @@ class App extends Component {
 				<header>
 					<span id="slogan"></span>
 					<div id="nav">
-						<Link to="/" alt="Home" className="badge badge-pill badge-dark">
+						<Link to="/" alt="Home" className="btn btn-outline-success">
 							Home
 						</Link>
 						<Link
 							to="/library"
 							alt="Records you can play"
-							className="badge badge-pill badge-dark">
+							className="btn btn-outline-success">
 							{' Albums '}
 						</Link>
 						<Link
 							to="/about"
 							alt="About this project"
-							className="badge badge-pill badge-dark">
+							className="btn btn-outline-success">
 							{' About '}
 						</Link>
 						<a
@@ -34,7 +34,7 @@ class App extends Component {
 							alt="Link to Source Code"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="badge badge-pill badge-dark">
+							className="btn btn-outline-success">
 							{' Source Code '}
 						</a>
 					</div>

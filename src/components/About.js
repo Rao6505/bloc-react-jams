@@ -4,8 +4,7 @@ class About extends Component {
   render() {
     return (
 			<div className="About">
-			<h1>BLOC Jams</h1>
-			<h2>Tunes to Code by</h2>
+			<h1>Bloc Jams</h1>
 			<hr></hr>
 			<h3>Proof of concept for a mobile-first frontend-only music player app.</h3>
 			<h5>Built with:</h5>
